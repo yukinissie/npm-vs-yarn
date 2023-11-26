@@ -4,12 +4,12 @@
 
 ## What is Yarn
 
-Yarn is a new package manager for JavaScript. Please read [blog post][3] from [Facebook][4] for detail information.
+Yarn is a package manager for JavaScript. Please read [blog post][3] from [Meta][4] for detail information.
 
 [1]: https://www.npmjs.com/
 [2]: https://yarnpkg.com/
-[3]: https://code.facebook.com/posts/1840075619545360
-[4]: https://code.facebook.com/
+[3]: https://engineering.fb.com/2016/10/11/web/yarn-a-new-package-manager-for-javascript/
+[4]: https://engineering.fb.com/
 
 ## Prepare Environment
 
@@ -21,7 +21,7 @@ You can testing in Docker or what you prefer.
 
 ## Testing without cache
 
-Testing install speed without cache `node_modules` folder.
+Testing install speed without cache and without `node_modules` folder.
 
 ```
 rm -rf ~/.npm/_cacache/
@@ -51,7 +51,7 @@ time: `4.64s`
 
 ## Testing with cache
 
-Testing install speed **without** include cache `node_modules` folder.
+Testing install speed with cache and without `node_modules` folder.
 
 ```
 rm -rf node_modules
@@ -76,7 +76,7 @@ time yarn install
 
 time: `1.68s`
 
-Testing install speed **with** cache `node_modules` folder.
+Testing install speed with cache and with `node_modules` folder.
 
 ```
 time npm install
@@ -100,7 +100,7 @@ time: `0.10s`
 
 Date: 2023-11-26
 
-Yarn is faster than npm. We can move package manager from Npm to Yarn for JavaScript now.
+Yarn is just a bit faster than npm. I guess speed may not be the deciding factor in whether to switch from npm to yarn.
 
 |                                              | npm install | npm ci | yarn  |
 | -------------------------------------------- | ----------- | ------ | ----- |
