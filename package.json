@@ -1,12 +1,12 @@
 {
   "private": true,
   "devDependencies": {
-    "axios": "^0.15.3",
-    "bootstrap-sass": "^3.3.7",
-    "cross-env": "^3.2.3",
-    "jquery": "^3.5.0",
-    "laravel-mix": "0.*",
-    "lodash": "^4.17.19",
-    "vue": "^2.1.10"
+    "axios": "^1.6.2",
+    "bootstrap-sass": "^3.4.3",
+    "cross-env": "^7.0.3",
+    "jquery": "^3.7.1",
+    "laravel-mix": "6.*",
+    "lodash": "^4.17.21",
+    "vue": "^3.3.9"
   }
 }
