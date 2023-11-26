@@ -24,87 +24,87 @@ You can testing in Docker or what you prefer.
 Testing install speed without cache `node_modules` folder.
 
 ```
-$ rm -rf ~/.npm/_cacache/
-$ time npm install
+rm -rf ~/.npm/_cacache/
+rm -rf node_modules
+time npm install
 ```
 
-<!-- time: `3m40.155s` -->
+time: `4.88s`
 
 Try [npm ci](https://docs.npmjs.com/cli/ci) command
 
 ```
-$ rm -rf ~/.npm/_cacache/
-$ time npm ci
+rm -rf ~/.npm/_cacache/
+rm -rf node_modules
+time npm ci
 ```
 
-<!-- time: `3m10.783s` -->
+time: `5.02s`
 
 ```
-$ yarn cache clean
-$ time yarn install
+yarn cache clean
+rm -rf node_modules
+time yarn install
 ```
 
-<!-- time: `1m1.261s` -->
+time: `4.64s`
 
 ## Testing with cache
 
 Testing install speed **without** include cache `node_modules` folder.
 
 ```
-$ rm -rf node_modules
-$ time npm install
+rm -rf node_modules
+time npm install
 ```
 
-<!-- time: `1m1.195s` -->
+time: `2.20s`
 
 Try [npm ci](https://docs.npmjs.com/cli/ci) command
 
 ```
-$ rm -rf node_modules
-$ time npm ci
+rm -rf node_modules
+time npm ci
 ```
 
-<!-- time: `0m18.030s` -->
+time: `2.18s`
 
 ```
-$ rm -rf node_modules
-$ time yarn install
+rm -rf node_modules
+time yarn install
 ```
 
-<!-- time: `0m30.571s` -->
+time: `1.68s`
 
 Testing install speed **with** cache `node_modules` folder.
 
 ```
-$ time npm install
+time npm install
 ```
 
-<!-- time: `0m54.944s` -->
+time: `0.79s`
 
 ```
-$ time npm ci
+time npm ci
 ```
 
-<!-- time: `0m21.810s` -->
+time: `2.46s`
 
 ```
-$ time yarn install
+time yarn install
 ```
 
-<!-- time: `0m2.109s` -->
+time: `0.10s`
 
 ## Conclusion
 
-TBD
-
-<!--
-Date: 2018-10-02
+Date: 2023-11-26
 
 Yarn is faster than npm. We can move package manager from Npm to Yarn for JavaScript now.
 
-|                                              | npm install | npm ci | yarn |
-| -------------------------------------------- | ----------- | ------ | ---- |
-| install without cache (without node_modules) | 3m          | 3m     | 1m   |
-| install with cache (without node_modules)    | 1m          | 18s    | 30s  |
-| install with cache (with node_modules)       | 54s         | 21s    | 2s   |
-| install without internet (with node_modules) | -           | -      | 2s   | -->
+|                                              | npm install | npm ci | yarn  |
+| -------------------------------------------- | ----------- | ------ | ----- |
+| install without cache (without node_modules) | 4.88s       | 5.02s  | 4.64s |
+| install with cache (without node_modules)    | 2.20s       | 2.18s  | 1.68s |
+| install with cache (with node_modules)       | 0.79s       | 2.46s  | 0.43s |
+| install without internet (with node_modules) | 0.85s       | 2.40s  | 0.10s |
